@@ -1,0 +1,29 @@
+site_name: Charts with privacy
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+
+plugins:
+  - search
+  - privacy
+  - charts
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+  
+# tabbed content
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
